@@ -1,18 +1,39 @@
 package main
 
-import (
-	"fmt"
-	"sort"
-)
-
 func main() {
-	names := []string{"Alice", "Bob", "Charlie"}
-	sort.Strings(names)
-	fmt.Println("Sorted names:", names)
-	fmt.Println("Index of 'Bob':", sort.SearchStrings(names, "Bob"))
-	sort.Sort(sort.Reverse(sort.StringSlice(names)))
-	fmt.Println("Reverse sorted names:", names)
 }
+
+//loops
+// x := 0
+// for x < 5 {
+// 	fmt.Println("Value of x:", x)
+// 	x++
+// }
+
+// for i := 0; i < 5; i++ {
+// 	fmt.Println("Value of i:", i)
+// }
+
+// names := []string{"Alice", "Bob", "Charlie"}
+// for i := 0; i < len(names); i++ {
+// 	fmt.Printf("Index: %d, Name: %s\n", i, names[i])
+// }
+
+// names := []string{"Alice", "Bob", "Charlie"}
+// for i, name := range names {
+// 	fmt.Printf("Index: %d, Name: %s\n", i, name)
+// }
+
+//}
+
+// func main() {
+// 	names := []string{"Alice", "Bob", "Charlie"}
+// 	sort.Strings(names)
+// 	fmt.Println("Sorted names:", names)
+// 	fmt.Println("Index of 'Bob':", sort.SearchStrings(names, "Bob"))
+// 	sort.Sort(sort.Reverse(sort.StringSlice(names)))
+// 	fmt.Println("Reverse sorted names:", names)
+// }
 
 // func main() {
 // 	//sort package
