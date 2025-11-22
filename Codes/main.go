@@ -1,17 +1,18 @@
 package main
 
-import "fmt"
-
-func updateName(x *string) {
-	*x = "hammer"
-}
-
 func main() {
-	name := "tool"
-
-	updateName(&name)
-	fmt.Println(name)
 }
+
+// func updateName(x *string) {
+// 	*x = "hammer"
+// }
+
+// func main() {
+// 	name := "tool"
+
+// 	updateName(&name)
+// 	fmt.Println(name)
+// }
 
 // func updateName(x string) string {
 // 	x = "hammer"

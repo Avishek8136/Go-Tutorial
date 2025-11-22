@@ -1,4 +1,8 @@
-// package main
+package main
+
+func updateName(x *string) {
+	*x = "hammer"
+}
 
 // import "fmt"
 
