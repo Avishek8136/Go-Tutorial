@@ -1,15 +1,54 @@
 package main
 
-func main() {
-	myBill := NewBill(1)
-	myBill.updateTip(2.5)
-	myBill.addItem("coffee", 3.99)
-	println(myBill.format())
-	// fmt.Println(myBill)
-	// fmt.Printf("Type: %T\n", myBill)
-	// fmt.Println("Bill ID:", myBill.ID)
-	// fmt.Println("Bill Items:", myBill.Items)
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
+
+func getInput(prompt string, r *bufio.Reader) string {
+	fmt.Print(prompt)
+	input, _ := r.ReadString('\n')
+	input = strings.TrimSpace(input)
+	return input
 }
+
+func createBill() Bill {
+	reader := bufio.NewReader(os.Stdin)
+	println("Create a new bill")
+	print("Enter bill ID: ")
+	// idinput:=bufio.NewReader(os.Stdin)
+	// idinput,_ = idinput.ReadString('\n')
+	// idinput = strings.TrimSpace(idinput)
+	idInput := getInput("Enter bill ID: ", reader)
+	id, _ := strconv.Atoi(idInput)
+	bill := NewBill(id)
+	return bill
+}
+
+func promptOptions(b Bill) {
+	reader := bufio.NewReader(os.Stdin)
+	opt := getInput("Choose option (a - add item, s -save bill, t - add tip) ", reader)
+	fmt.Println(opt)
+}
+
+func main() {
+	myBill := createBill()
+	promptOptions(myBill)
+	print(myBill.format())
+}
+
+//{
+// myBill.updateTip(2.5)
+// myBill.addItem("coffee", 3.99)
+// println(myBill.format())
+// fmt.Println(myBill)
+// fmt.Printf("Type: %T\n", myBill)
+// fmt.Println("Bill ID:", myBill.ID)
+// fmt.Println("Bill Items:", myBill.Items)
+//}
 
 // func updateName(x *string) {
 // 	*x = "hammer"

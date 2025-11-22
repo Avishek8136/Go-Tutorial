@@ -21,6 +21,7 @@ func NewBill(id int) Bill {
 func (b Bill) format() string {
 	fs := "Bill Breakdown\n"
 	var total float64 = 0
+	fmt.Println("Bill", b.ID)
 	for k, v := range b.Items {
 		fs += fmt.Sprintf("%-25v ...$%v\n", k+":", v)
 		total += v
