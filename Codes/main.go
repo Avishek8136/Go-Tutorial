@@ -1,6 +1,13 @@
 package main
 
+import "fmt"
+
 func main() {
+	myBill := NewBill(1)
+	fmt.Println(myBill)
+	fmt.Printf("Type: %T\n", myBill)
+	fmt.Println("Bill ID:", myBill.ID)
+	fmt.Println("Bill Items:", myBill.Items)
 }
 
 // func updateName(x *string) {
