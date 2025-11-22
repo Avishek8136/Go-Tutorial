@@ -35,13 +35,23 @@ func promptOptions(b Bill) {
 	case "a":
 		itemName := getInput("Enter item name: ", reader)
 		itemPriceInput := getInput("Enter item price: ", reader)
-		itemPrice, _ := strconv.ParseFloat(itemPriceInput, 64)
+		itemPrice, err := strconv.ParseFloat(itemPriceInput, 64)
+		if err != nil {
+			fmt.Println("Invalid price. Please try again.")
+			promptOptions(b)
+			return
+		}
 		b.addItem(itemName, itemPrice)
 		fmt.Println("Item added successfully!")
 		promptOptions(b)
 	case "t":
 		tipInput := getInput("Enter tip amount: ", reader)
-		tip, _ := strconv.ParseFloat(tipInput, 64)
+		tip, err := strconv.ParseFloat(tipInput, 64)
+		if err != nil {
+			fmt.Println("Invalid tip amount. Please try again.")
+			promptOptions(b)
+			return
+		}
 		b.updateTip(tip)
 		fmt.Println("Tip updated successfully!")
 		promptOptions(b)
