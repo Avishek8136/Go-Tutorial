@@ -1,29 +1,36 @@
 package main
 
-import "fmt"
+func tryMe(message string) (string, string) {
+	return message, "GoLang"
+}
+func main() {
+	a, b := tryMe("Hello, World!")
+	print(a, b)
+}
 
 // func myfunc() {
 // 	fmt.Println("This is my function")
 // }
 
-func myfunc(message string) {
-	fmt.Println(message)
-}
+// func myfunc(message string) {
+// 	fmt.Println(message)
+// 	return 0,4
+// }
 
-func tryMe(message string) {
-	fmt.Println(message)
-	myfunc(message)
-}
+// func tryMe(message string) {
+// 	fmt.Println(message)
+// 	myfunc(message)
+// }
 
-func tryMeAgain(message string, f func(string)) {
-	f(message)
-}
+// func tryMeAgain(message string, f func(string)) {
+// 	f(message)
+// }
 
-func main() {
-	tryMe("Hello from main")
-	tryMeAgain("Hello from tryMeAgain", myfunc)
-	tryMeAgain("Greetings", tryMe)
-}
+// func main() {
+// 	tryMe("Hello from main")
+// 	tryMeAgain("Hello from tryMeAgain", myfunc)
+// 	tryMeAgain("Greetings", tryMe)
+// }
 
 // func main() {
 // 	names := []string{"Alice", "Bob", "Charlie"}
