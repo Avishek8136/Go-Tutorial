@@ -1,7 +1,53 @@
 package main
 
-func main() {
+import "fmt"
+
+// func myfunc() {
+// 	fmt.Println("This is my function")
+// }
+
+func myfunc(message string) {
+	fmt.Println(message)
 }
+
+func tryMe(message string) {
+	fmt.Println(message)
+	myfunc(message)
+}
+
+func tryMeAgain(message string, f func(string)) {
+	f(message)
+}
+
+func main() {
+	tryMe("Hello from main")
+	tryMeAgain("Hello from tryMeAgain", myfunc)
+	tryMeAgain("Greetings", tryMe)
+}
+
+// func main() {
+// 	names := []string{"Alice", "Bob", "Charlie"}
+// 	for index, name := range names {
+// 		if index == 1 {
+// 			continue
+// 		} else {
+// 			fmt.Printf("Index: %d, Name: %s\n", index, name)
+// 		}
+// 	}
+
+//booleans
+// age := 20
+// if age >= 18 {
+// 	fmt.Println("You are an adult.")
+// }else if age == 18 {
+// 	fmt.Println("You are just turned adult.")
+// } else {
+// 	fmt.Println("You are a minor.")
+// fmt.Println(age >= 18)
+// fmt.Println(age <= 18)
+// fmt.Println(age == 18)
+// fmt.Println(age != 18)
+//}
 
 //loops
 // x := 0
