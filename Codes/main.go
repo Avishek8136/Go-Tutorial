@@ -31,13 +31,32 @@ func createBill() Bill {
 func promptOptions(b Bill) {
 	reader := bufio.NewReader(os.Stdin)
 	opt := getInput("Choose option (a - add item, s -save bill, t - add tip) ", reader)
-	fmt.Println(opt)
+	switch opt {
+	case "a":
+		itemName := getInput("Enter item name: ", reader)
+		itemPriceInput := getInput("Enter item price: ", reader)
+		itemPrice, _ := strconv.ParseFloat(itemPriceInput, 64)
+		b.addItem(itemName, itemPrice)
+		fmt.Println("Item added successfully!")
+		promptOptions(b)
+	case "t":
+		tipInput := getInput("Enter tip amount: ", reader)
+		tip, _ := strconv.ParseFloat(tipInput, 64)
+		b.updateTip(tip)
+		fmt.Println("Tip updated successfully!")
+		promptOptions(b)
+	case "s":
+		fmt.Println("Saving bill...")
+		fmt.Println(b.format())
+	default:
+		fmt.Println("Invalid option. Please try again.")
+		promptOptions(b)
+	}
 }
 
 func main() {
 	myBill := createBill()
 	promptOptions(myBill)
-	print(myBill.format())
 }
 
 //{
