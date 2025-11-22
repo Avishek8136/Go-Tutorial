@@ -1,13 +1,14 @@
 package main
 
-import "fmt"
-
 func main() {
 	myBill := NewBill(1)
-	fmt.Println(myBill)
-	fmt.Printf("Type: %T\n", myBill)
-	fmt.Println("Bill ID:", myBill.ID)
-	fmt.Println("Bill Items:", myBill.Items)
+	myBill.updateTip(2.5)
+	myBill.addItem("coffee", 3.99)
+	println(myBill.format())
+	// fmt.Println(myBill)
+	// fmt.Printf("Type: %T\n", myBill)
+	// fmt.Println("Bill ID:", myBill.ID)
+	// fmt.Println("Bill Items:", myBill.Items)
 }
 
 // func updateName(x *string) {
