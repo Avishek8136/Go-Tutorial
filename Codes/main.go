@@ -1,12 +1,63 @@
 package main
 
-func tryMe(message string) (string, string) {
-	return message, "GoLang"
+import "fmt"
+
+func updateName(x string) string {
+	x = "hammer"
+	return x
 }
+
+func updateMenu(y map[string]float64) {
+	y["coffee"] = 2.99
+}
+
 func main() {
-	a, b := tryMe("Hello, World!")
-	print(a, b)
+	// group A types -> strings, ints, bools, floats, arrays, structs
+	name := "tool"
+
+	name = updateName(name)
+	fmt.Println(name)
+
+	// group B types -> slices, maps, functions
+	menu := map[string]float64{
+		"pi":     3.41,
+		"banana": 8,
+	}
+
+	updateMenu(menu)
+	fmt.Println(menu)
 }
+
+// // maps
+// func main() {
+// 	person := map[string]string{
+// 		"name":    "Alice",
+// 		"country": "Wonderland",
+// 		"job":     "Adventurer",
+// 	}
+// 	fmt.Println("Person map:", person["name"])
+// 	fmt.Printf("Type: %T\n", person)
+// 	fmt.Printf("Length: %d\n", len(person))
+// 	fmt.Println(person)
+// 	for key, value := range person {
+// 		fmt.Printf("%s: %s\n", key, value)
+// 	}
+// }
+
+//package scope main
+
+// func main() {
+// 	sayHello("World!")
+// 	println(a)
+// }
+
+// func tryMe(message string) (string, string) {
+// 	return message, "GoLang"
+// }
+// func main() {
+// 	a, b := tryMe("Hello, World!")
+// 	print(a, b)
+// }
 
 // func myfunc() {
 // 	fmt.Println("This is my function")
